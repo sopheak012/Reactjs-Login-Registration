@@ -12,7 +12,7 @@ import propTypes from 'prop-types';
      errors: {}
    };
 
-   onChange = e => this.setState({data: {...this.state.date, [e.target.name]: e.target.value}});
+   onChange = e => this.setState({data: {...this.state.data, [e.target.name]: e.target.value}});
 
    onSubmit = () => {
      //this.setState({errors});
@@ -33,11 +33,11 @@ import propTypes from 'prop-types';
 
         <br/><br/>
 
-        <label htmlFor="psw"><b>Password</b></label><br/>
-        <input type="password" placeholder="Enter Password" id="password" name="password" required/>
+        <label htmlFor="password"><b>Password</b></label><br/>
+        <input type="password" placeholder="Enter Password" id="password" name="password" value={data.password} onChange = {this.onChange} required/>
 
 
-
+        <br/><br/>
         <button type="submit">Login</button>
         </form>
     </div>

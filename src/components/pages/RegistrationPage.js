@@ -15,6 +15,7 @@ submit = data => {
   })
   .then(function(response){
     console.log(response)
+    alert(response.status)
   });
 };
 

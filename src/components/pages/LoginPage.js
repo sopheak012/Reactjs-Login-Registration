@@ -1,12 +1,28 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import LoginForm from "../forms/LoginForm";
+import axios from 'axios';
+import {withRouter} from 'react-router-dom';
+
+
 
 
 class LoginPage extends React.Component{
+
 submit = data => {
-  alert("Email: " + data.email);
-};
+
+    //alert("username: " + data.username);
+    axios.post('http://localhost:3333/api/login',{
+      email:data.email,
+      password:data.password
+    })
+    .then(function(response){
+      response.status == 200 ? "I want to navigate" : alert("Failed transition:")
+    });
+  };
+
+
+
 
 render(){
   return(
@@ -20,7 +36,6 @@ render(){
 }
 
 }
-
 
 
 

@@ -38,7 +38,7 @@ import propTypes from 'prop-types';
           <br/><br/>
 
           <label htmlFor="password"><b>Password</b></label><br/>
-          <input type="password" placeholder="Enter Password" id="password" name="password" required/>
+          <input type="password" placeholder="Enter Password" id="password" name="password" value={data.password} onChange = {this.onChange} required/>
           <br/><br/>
 
 
