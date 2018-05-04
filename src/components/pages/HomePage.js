@@ -3,8 +3,9 @@ import {Link} from "react-router-dom";
 
 const HomePage = () => (
 <div>
-  <h1>Home Pageeee</h1>
-  <Link to="/login">Login</Link>
+  <h1>Home Page</h1>
+  <Link to="/login">Login</Link><br/><br/>
+  <Link to="/registration">Registration</Link>
 </div>
 
 );

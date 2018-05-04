@@ -5,7 +5,7 @@ import LoginForm from "../forms/LoginForm";
 
 class LoginPage extends React.Component{
 submit = data => {
-  alert("username: " + data.email);
+  alert("Email: " + data.email);
 };
 
 render(){

@@ -35,7 +35,8 @@ import propTypes from 'prop-types';
 
         <label htmlFor="psw"><b>Password</b></label><br/>
         <input type="password" placeholder="Enter Password" id="password" name="password" required/>
-        <br/><br/>
+
+
 
         <button type="submit">Login</button>
         </form>
