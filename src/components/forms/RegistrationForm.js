@@ -16,10 +16,7 @@ import propTypes from 'prop-types';
    onChange = e => this.setState({data: {...this.state.data, [e.target.name]: e.target.value}});
 
    onSubmit = () => {
-     //this.setState({errors});
-     //const username = this.state;
      this.props.submit(this.state.data);
-     //alert('Username is: ' + username.data.username);
    };
 
    render() {
