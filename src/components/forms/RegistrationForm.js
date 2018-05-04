@@ -1,5 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import {Form, Button } from 'semantic-ui-react';
 
 
  class RegistrationForm extends React.Component {
@@ -43,7 +44,7 @@ import propTypes from 'prop-types';
 
 
 
-          <button type="submit">Register</button>
+          <Button type="submit" primary>Register</Button>
       </form>
     </div>
 

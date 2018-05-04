@@ -17,16 +17,13 @@ submit = data => {
       password:data.password
     })
     .then(function(response){
-      response.status == 200 ? "I want to navigate" : alert("Failed transition:")
+      //response.status == 200 ? changePage(): alert("Failed transition:")
     });
   };
 
-
-
-
 render(){
   return(
-    <div>
+    <div className="ui container">
       <h1>Login Page</h1><br/><br/>
       <LoginForm submit={this.submit}/>
     </div>
