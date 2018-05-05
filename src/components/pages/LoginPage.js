@@ -2,8 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import LoginForm from "../forms/LoginForm";
 import axios from 'axios';
-import {withRouter} from 'react-router-dom';
-
+import {Button } from 'semantic-ui-react';
 
 
 class LoginPage extends React.Component{
@@ -16,7 +15,9 @@ submit = data => {
       password:data.password
     })
     .then(function(response){
-      response.data.success ? alert("Login Successful") :   alert(response.data.message)
+      response.data.success
+      ? (alert("Login Successfull. \n\n You are being redirected to the home page."), window.location.replace('/landing'))
+      : alert(response.data.message);
 
     });
   };
@@ -26,6 +27,10 @@ render(){
     <div className="ui container">
       <h1>Login Page</h1><br/><br/>
       <LoginForm submit={this.submit}/>
+      <br/><br/><p>Make a new account? Right here.</p><br/>
+      <Button>
+        <Link to="/registration">Registration</Link>
+      </Button>
     </div>
 
   );
