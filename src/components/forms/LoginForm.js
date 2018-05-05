@@ -12,9 +12,11 @@ import {Form, Button } from 'semantic-ui-react';
      errors: {}
    };
 
-   onChange = e => this.setState({data: {...this.state.date, [e.target.name]: e.target.value}});
+   onChange = e => this.setState({data: {...this.state.data, [e.target.name]: e.target.value}});
 
-   onSubmit = () => {
+   onSubmit = (e) => {
+
+     e.preventDefault();
      //this.setState({errors});
      //const username = this.state;
      this.props.submit(this.state.data);
@@ -34,7 +36,7 @@ import {Form, Button } from 'semantic-ui-react';
             <br/><br/>
 
             <label htmlFor="password"><b>Password</b></label><br/>
-            <input type="password" placeholder="Enter Password" id="password" name="password" required/>
+            <input type="password" placeholder="Enter Password" id="password" name="password" value={data.password} onChange = {this.onChange} required/>
 
 
             <br/><br/>

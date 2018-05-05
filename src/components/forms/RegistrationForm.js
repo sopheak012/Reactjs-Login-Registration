@@ -16,7 +16,8 @@ import {Form, Button } from 'semantic-ui-react';
 
    onChange = e => this.setState({data: {...this.state.data, [e.target.name]: e.target.value}});
 
-   onSubmit = () => {
+   onSubmit = (e) => {
+      e.preventDefault();
      this.props.submit(this.state.data);
    };
 

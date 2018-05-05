@@ -6,7 +6,6 @@ import {withRouter} from 'react-router-dom';
 
 
 
-
 class LoginPage extends React.Component{
 
 submit = data => {
@@ -17,7 +16,8 @@ submit = data => {
       password:data.password
     })
     .then(function(response){
-      //response.status == 200 ? changePage(): alert("Failed transition:")
+      response.data.success ? alert("Login Successful") :   alert(response.data.message)
+
     });
   };
 
