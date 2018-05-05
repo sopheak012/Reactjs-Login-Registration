@@ -1,6 +1,8 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import {Form, Button } from 'semantic-ui-react';
+import Toggle from 'react-toggle';
+import "react-toggle/style.css"
 
 
  class RegistrationForm extends React.Component {
@@ -8,7 +10,8 @@ import {Form, Button } from 'semantic-ui-react';
      data: {
        username: '',
        email: '',
-       password: ''
+       password: '',
+       admin:'false'
      },
      loading: false,
      errors: {}
@@ -18,7 +21,9 @@ import {Form, Button } from 'semantic-ui-react';
 
    onSubmit = (e) => {
       e.preventDefault();
-     this.props.submit(this.state.data);
+      //console.log(this.state.data);
+      this.state.data.admin === 'true' ? (alert(this.state.data.username + " wants to be an admin"),this.state.data.admin = false) : this.state.data.admin = false;
+      this.props.submit(this.state.data);
    };
 
    render() {
@@ -42,8 +47,11 @@ import {Form, Button } from 'semantic-ui-react';
           <label htmlFor="password"><b>Password</b></label><br/>
           <input type="password" placeholder="Enter Password" id="password" name="password" value={data.password} onChange = {this.onChange} required/>
           <br/><br/>
-
-
+          <label htmlFor="admin"><b>Would you like to register as an Admin?</b></label><br/>
+          <Toggle
+            defaultChecked={this.state.admin}
+            name='admin'
+            value='true' onChange = {this.onChange}/><br/>
 
           <Button type="submit" primary>Register</Button>
       </form>

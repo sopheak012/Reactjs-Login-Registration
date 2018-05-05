@@ -15,8 +15,10 @@ submit = data => {
       password:data.password
     })
     .then(function(response){
+
+      var email = response.data.email;
       response.data.success
-      ? (alert("Login Successfull. \n\n You are being redirected to the home page."), window.location.replace('/landing'))
+      ? (alert("Login Successfull. \n\n You are being redirected to the home page."), window.location.replace('/landing?name='+ email))
       : alert(response.data.message);
 
     });

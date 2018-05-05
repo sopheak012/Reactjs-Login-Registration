@@ -7,12 +7,12 @@ import {Button } from 'semantic-ui-react';
 class RegistrationPage extends React.Component{
 
 submit = data => {
-  //alert("username: " + data.username);
+  alert("Admin: " + data.admin);
   axios.post('http://localhost:3333/register',{
     name:data.username,
     email:data.email,
     password:data.password,
-    admin:false
+    admin:data.admin
   })
   .then(function(response){
     response.data.success
