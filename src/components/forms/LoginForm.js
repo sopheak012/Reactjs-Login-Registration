@@ -1,9 +1,11 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import {Form, Button } from 'semantic-ui-react';
+import {Button} from 'semantic-ui-react';
 
  class LoginForm extends React.Component {
    state = {
+
+     //creating the data variable that holds the email and password to be passed on
      data: {
        email: '',
        password: ''
@@ -12,13 +14,13 @@ import {Form, Button } from 'semantic-ui-react';
      errors: {}
    };
 
+   //Checks for the change of state and then loads the data entered in the form to the state.
    onChange = e => this.setState({data: {...this.state.data, [e.target.name]: e.target.value}});
 
    onSubmit = (e) => {
-
+     //Prevents the page from refreshing while submitting a form
      e.preventDefault();
-     //this.setState({errors});
-     //const username = this.state;
+     //This submits the data to the parent component.
      this.props.submit(this.state.data);
      //alert('Username is: ' + username.data.email);
    };

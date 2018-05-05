@@ -6,6 +6,7 @@ import {Button } from 'semantic-ui-react';
 
 class RegistrationPage extends React.Component{
 
+//Gets the data and sumbits it for a post request
 submit = data => {
   alert("Admin: " + data.admin);
   axios.post('http://localhost:3333/register',{
@@ -15,6 +16,8 @@ submit = data => {
     admin:data.admin
   })
   .then(function(response){
+
+    //This is responsible for the page navigation.
     response.data.success
     ? (alert("Registration Successfull. \n\n You are being redirected to the Login Page."), window.location.replace('/login'))
     : alert("Registration failed. Please contact administrator");

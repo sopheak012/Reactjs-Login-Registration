@@ -1,12 +1,14 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import {Form, Button } from 'semantic-ui-react';
+import {Button } from 'semantic-ui-react';
 import Toggle from 'react-toggle';
 import "react-toggle/style.css"
 
 
  class RegistrationForm extends React.Component {
    state = {
+
+     //Creats an object that can store the variables
      data: {
        username: '',
        email: '',
@@ -17,11 +19,14 @@ import "react-toggle/style.css"
      errors: {}
    };
 
+   //Checks for the change of state and then assigns the form data to the state.
    onChange = e => this.setState({data: {...this.state.data, [e.target.name]: e.target.value}});
 
    onSubmit = (e) => {
       e.preventDefault();
       //console.log(this.state.data);
+      //This checks if the user wants to be an admin and changes it to false to avoid security risks. It also notifies that a specified user wants to be an admin.
+      //We can replace the "alert()" function that displays the admin status of a user with a sendEmail function that notifies the platform architect.
       this.state.data.admin === 'true' ? (alert(this.state.data.username + " wants to be an admin"),this.state.data.admin = false) : this.state.data.admin = false;
       this.props.submit(this.state.data);
    };

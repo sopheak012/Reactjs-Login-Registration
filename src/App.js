@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Route} from "react-router-dom";
 import HomePage from "./components/pages/HomePage";
 import LandingPage from "./components/pages/LandingPage";

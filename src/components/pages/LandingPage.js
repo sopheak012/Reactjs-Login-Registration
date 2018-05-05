@@ -1,22 +1,23 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import LoginForm from "../forms/LoginForm";
 import {Button } from 'semantic-ui-react';
 
 
 class LandingPage extends React.Component{
 
+//We are declaring the function "getQueryVariable"
   constructor(props){
     super(props);
     this.getQueryVariable = this.getQueryVariable.bind(this);
   }
 
+//This function decodes the URI and gets the parameters passed to it.
 getQueryVariable(variable){
          var query = window.location.search.substring(1);
          var vars = query.split("&");
          for (var i=0;i<vars.length;i++) {
                  var pair = vars[i].split("=");
-                 if(pair[0] == variable){return pair[1];}
+                 if(pair[0] === variable){return pair[1];}
          }
          return(false);
   }
