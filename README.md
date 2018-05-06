@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ### Dependencies
-Run  : ###`npm install` 
+Run  : `npm install` 
 This would install all the below dependencies.
 
 Make sure you install these dependencies.
@@ -25,7 +25,7 @@ Make sure you install these dependencies.
 }
 
 
-In the project directory, you can start using:
+Once in the project directory, you can start using:
 
 
 ### `yarn start`
