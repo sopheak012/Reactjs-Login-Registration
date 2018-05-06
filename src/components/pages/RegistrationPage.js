@@ -29,12 +29,12 @@ submit = data => {
 render(){
   //alert("Response is : " + this.state.response);
   return(
-    <div className="ui container">
-      <h1>Registration Page</h1><br/><br/>
-      <RegistrationForm  submit={this.submit}/><br/><br/>
-      <Button>
-        <Link to="/">Back to Home</Link>
-      </Button>
+    <div align="top">
+      <h1>Registration Page</h1>
+      <RegistrationForm  submit={this.submit}/>
+
+        <Link to="/" className="button">Back to Home</Link>
+
     </div>
 
   );

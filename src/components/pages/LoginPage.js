@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import LoginForm from "../forms/LoginForm";
 import axios from 'axios';
 import {Button } from 'semantic-ui-react';
+import './beamlogo.png';
 
 
 class LoginPage extends React.Component{
@@ -29,14 +30,14 @@ submit = data => {
 //This renders the HTML code
 render(){
   return(
-      <div className="ui container">
-        <h1>Login Page</h1><br/><br/>
-        <LoginForm submit={this.submit}/>
-        <br/><br/><p>Make a new account? Right here.</p><br/>
-        <Button>
-          <Link to="/registration">Registration</Link>
-        </Button>
+
+      <div>
+          <h1>Login Page</h1>
+          <LoginForm submit={this.submit}/>
+          <p>Make a new account? Right here.</p>
+          <Link to="/registration" className="button">Registration</Link>
       </div>
+
     );
   }
 }

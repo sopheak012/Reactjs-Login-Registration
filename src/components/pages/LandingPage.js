@@ -25,12 +25,12 @@ getQueryVariable(variable){
 render(){
   return(
     <div className="ui container">
-      <h1>Landing Page</h1><br/><br/>
+      <h1>Landing Page</h1>
 
-      <br/><br/><p>Welcome Home {this.getQueryVariable("name")}</p><br/>
-      <Button>
-        <Link to="/">Logout</Link>
-      </Button>
+    <p>Welcome Home {this.getQueryVariable("name")}</p>
+
+        <Link to="/" className="button">Logout</Link>
+
     </div>
 
   );
