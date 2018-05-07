@@ -27,7 +27,7 @@ import "react-toggle/style.css"
       //console.log(this.state.data);
       //This checks if the user wants to be an admin and changes it to false to avoid security risks. It also notifies that a specified user wants to be an admin.
       //We can replace the "alert()" function that displays the admin status of a user with a sendEmail function that notifies the platform architect.
-      this.state.data.admin === 'true' ? (alert(this.state.data.username + "! You have requested to be an admin. An email has been sent to the supervisor."),this.state.data.admin = false) : this.state.data.admin = false;
+      
       this.props.submit(this.state.data);
    };
 
